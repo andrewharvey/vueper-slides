@@ -188,6 +188,7 @@ export default {
     draggingDistance: { type: Number, default: null },
     duration: { type: [Number, String], default: 4000 }, // Autoplay slide duration.
     infinite: { type: Boolean, default: true },
+    wrap: { type: Boolean, default: true },
     fade: { type: Boolean, default: false },
     fixedHeight: { type: [Boolean, String], default: false },
     fractions: { type: Boolean, default: false },
@@ -887,6 +888,9 @@ export default {
       // Get the next slide index and whether it's a clone.
       const { nextSlide, clone: nextSlideIsClone } = this.getSlideInRange(index, autoPlaying)
       this.nextSlideIsClone = nextSlideIsClone
+
+      // If would need to wrap around then don't go further
+      if (this.conf.wrap === false && this.nextSlideIsClone) return
 
       // If the slide is not found don't go further.
       if (!this.slides.list[nextSlide]) return

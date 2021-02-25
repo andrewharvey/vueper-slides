@@ -1576,6 +1576,7 @@
     fractions:                [Boolean],         default: false
     gap:                      [Number],          default: 0
     infinite:                 [Boolean],         default: true
+    wrap:                     [Boolean],         default: true
     initSlide:                [Number],          default: 1
     lazy:                     [Boolean],         default: false
     lazyLoadOnDrag:           [Boolean],         default: false
@@ -1735,6 +1736,11 @@
       highlight.
         Infinite sliding is only possible with the sliding transition,
         as a fade transition slideshow does not need such effect.
+
+    li
+      | #[code wrap], #[strong.mr-1 Type:] #[span.code="[Boolean]"], #[strong.mr-1 Default:] #[span.code true]
+      p.
+        When set to #[span.code true], the slideshow wraps from start to end.#[br]
 
     li
       | #[code initSlide], #[strong.mr-1 Type:] #[span.code="[Number]"], #[strong.mr-1 Default:] #[span.code 1]
