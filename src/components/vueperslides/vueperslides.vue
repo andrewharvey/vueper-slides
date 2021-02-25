@@ -890,7 +890,7 @@ export default {
       this.nextSlideIsClone = nextSlideIsClone
 
       // If would need to wrap around then don't go further
-      if (this.conf.wrap === false && this.nextSlideIsClone) return
+      if (this.conf.wrap === false && (index === -1 || index === this.slidesCount)) return
 
       // If the slide is not found don't go further.
       if (!this.slides.list[nextSlide]) return
